@@ -742,6 +742,7 @@ class PaginatedDataTable2State extends State<PaginatedDataTable2> {
           // Make sure no decoration is set on the DataTable
           // from the theme, as its already wrapped in a Card.
           datarowCheckboxTheme: widget.datarowCheckboxTheme,
+          headingCheckboxTheme: widget.headingCheckboxTheme,
           decoration: const BoxDecoration(),
           dividerThickness: widget.dividerThickness,
           fixedLeftColumns: widget.fixedLeftColumns,
