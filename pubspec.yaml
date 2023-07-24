@@ -12,6 +12,7 @@ dependencies:
   flutter: 
     sdk: flutter
   async: ^2.10.0
+  fluent_ui: ^1.2.3
 
 
 dev_dependencies:

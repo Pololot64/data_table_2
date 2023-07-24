@@ -8,6 +8,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:fluent_ui/fluent_ui.dart' as fluent;
 
 bool dataTableShowLogs = true;
 
@@ -336,10 +337,11 @@ class DataTable2 extends DataTable {
       child: wrapInContainer(
         Theme(
             data: ThemeData(checkboxTheme: checkboxTheme),
-            child: Checkbox(
-              value: checked,
+            child: fluent.Checkbox(
+              checked: checked,
+              //value: checked,
               onChanged: onCheckboxChanged,
-              tristate: tristate,
+              //tristate: tristate,
             )),
       ),
     );
@@ -534,14 +536,15 @@ class DataTable2 extends DataTable {
         headingRowColor ?? theme.dataTableTheme.headingRowColor;
     final effectiveDataRowColor =
         dataRowColor ?? theme.dataTableTheme.dataRowColor;
-    final defaultRowColor = MaterialStateProperty.resolveWith(
-      (Set<MaterialState> states) {
-        if (states.contains(MaterialState.selected)) {
-          return theme.colorScheme.primary.withOpacity(0.08);
-        }
-        return null;
-      },
-    );
+    // final defaultRowColor = MaterialStateProperty.resolveWith(
+    //   (Set<MaterialState> states) {
+    //     if (states.contains(MaterialState.selected)) {
+    //       return theme.colorScheme.primary.withOpacity(0.08);
+    //     }
+    //     return null;
+    //   },
+    // );
+    final defaultRowColor = MaterialStatePropertyAll(Colors.red);
     final anyRowSelectable =
         rows.any((DataRow row) => row.onSelectChanged != null);
     final displayCheckboxColumn = showCheckboxColumn && anyRowSelectable;
