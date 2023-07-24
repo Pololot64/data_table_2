@@ -337,11 +337,17 @@ class DataTable2 extends DataTable {
       child: wrapInContainer(
         Theme(
             data: ThemeData(checkboxTheme: checkboxTheme),
-            child: Checkbox(
-              value: checked,
-              onChanged: onCheckboxChanged,
-              tristate: tristate,
-            )),
+            child: tristate
+                ? Checkbox(
+                    value: checked,
+                    onChanged: onCheckboxChanged,
+                    tristate: tristate,
+                  )
+                : fluent.Checkbox(
+                    checked: checked,
+                    onChanged: onCheckboxChanged,
+                    //tristate: tristate,
+                  )),
       ),
     );
     // if (onRowTap != null) {
