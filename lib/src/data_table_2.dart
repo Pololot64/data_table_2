@@ -410,11 +410,11 @@ class DataTable2 extends DataTable {
       );
     }
 
-    label = InkWell(
-      onTap: onSort,
-      overlayColor: overlayColor,
-      child: label,
-    );
+    // label = InkWell(
+    //   onTap: onSort,
+    //   overlayColor: overlayColor,
+    //   child: label,
+    // );
     return label;
   }
 
@@ -476,50 +476,50 @@ class DataTable2 extends DataTable {
     );
 
     // Wrap label with InkResponse if there're cell or row level tap events
-    if (onTap != null ||
-        onDoubleTap != null ||
-        onLongPress != null ||
-        onTapDown != null ||
-        onTapCancel != null) {
-      // cell level
-      label = InkWell(
-        onTap: () {
-          onTap?.call();
-          onRowTap?.call();
-        },
-        onDoubleTap: () {
-          onDoubleTap?.call();
-          onRowDoubleTap?.call();
-        },
-        onLongPress: () {
-          onLongPress?.call();
-          onRowLongPress?.call();
-        },
-        onTapDown: onTapDown,
-        onTapCancel: onTapCancel,
-        // Also add row level events to cells
-        onSecondaryTap: onRowSecondaryTap,
-        onSecondaryTapDown: onRowSecondaryTapDown,
-        overlayColor: overlayColor,
-        child: label,
-      );
-    } else if (onSelectChanged != null ||
-        onRowTap != null ||
-        onRowDoubleTap != null ||
-        onRowLongPress != null ||
-        onRowSecondaryTap != null ||
-        onRowSecondaryTapDown != null) {
-      // row level
-      label = TableRowInkWell(
-        onTap: onRowTap ?? onSelectChanged,
-        onDoubleTap: onRowDoubleTap,
-        onLongPress: onRowLongPress,
-        onSecondaryTap: onRowSecondaryTap,
-        onSecondaryTapDown: onRowSecondaryTapDown,
-        overlayColor: overlayColor,
-        child: label,
-      );
-    }
+    // if (onTap != null ||
+    //     onDoubleTap != null ||
+    //     onLongPress != null ||
+    //     onTapDown != null ||
+    //     onTapCancel != null) {
+    //   // cell level
+    //   label = InkWell(
+    //     onTap: () {
+    //       onTap?.call();
+    //       onRowTap?.call();
+    //     },
+    //     onDoubleTap: () {
+    //       onDoubleTap?.call();
+    //       onRowDoubleTap?.call();
+    //     },
+    //     onLongPress: () {
+    //       onLongPress?.call();
+    //       onRowLongPress?.call();
+    //     },
+    //     onTapDown: onTapDown,
+    //     onTapCancel: onTapCancel,
+    //     // Also add row level events to cells
+    //     onSecondaryTap: onRowSecondaryTap,
+    //     onSecondaryTapDown: onRowSecondaryTapDown,
+    //     overlayColor: overlayColor,
+    //     child: label,
+    //   );
+    // } else if (onSelectChanged != null ||
+    //     onRowTap != null ||
+    //     onRowDoubleTap != null ||
+    //     onRowLongPress != null ||
+    //     onRowSecondaryTap != null ||
+    //     onRowSecondaryTapDown != null) {
+    //   // row level
+    //   label = TableRowInkWell(
+    //     onTap: onRowTap ?? onSelectChanged,
+    //     onDoubleTap: onRowDoubleTap,
+    //     onLongPress: onRowLongPress,
+    //     onSecondaryTap: onRowSecondaryTap,
+    //     onSecondaryTapDown: onRowSecondaryTapDown,
+    //     overlayColor: overlayColor,
+    //     child: label,
+    //   );
+    // }
     return label;
   }
 
