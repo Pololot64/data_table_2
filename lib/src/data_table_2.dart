@@ -348,7 +348,7 @@ class DataTable2 extends DataTable {
     if (onRowTap != null) {
       contents = TableRowInkWell(
         onTap: onRowTap,
-        overlayColor: overlayColor,
+        overlayColor: MaterialStatePropertyAll(Colors.purple), //overlayColor,
         child: contents,
       );
     }
@@ -536,15 +536,14 @@ class DataTable2 extends DataTable {
         headingRowColor ?? theme.dataTableTheme.headingRowColor;
     final effectiveDataRowColor =
         dataRowColor ?? theme.dataTableTheme.dataRowColor;
-    // final defaultRowColor = MaterialStateProperty.resolveWith(
-    //   (Set<MaterialState> states) {
-    //     if (states.contains(MaterialState.selected)) {
-    //       return theme.colorScheme.primary.withOpacity(0.08);
-    //     }
-    //     return null;
-    //   },
-    // );
-    final defaultRowColor = MaterialStatePropertyAll(Colors.red);
+    final defaultRowColor = MaterialStateProperty.resolveWith(
+      (Set<MaterialState> states) {
+        if (states.contains(MaterialState.selected)) {
+          return theme.colorScheme.primary.withOpacity(0.08);
+        }
+        return null;
+      },
+    );
     final anyRowSelectable =
         rows.any((DataRow row) => row.onSelectChanged != null);
     final displayCheckboxColumn = showCheckboxColumn && anyRowSelectable;
