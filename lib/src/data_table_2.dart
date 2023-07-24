@@ -337,21 +337,20 @@ class DataTable2 extends DataTable {
       child: wrapInContainer(
         Theme(
             data: ThemeData(checkboxTheme: checkboxTheme),
-            child: fluent.Checkbox(
-              checked: checked,
-              //value: checked,
+            child: Checkbox(
+              value: checked,
               onChanged: onCheckboxChanged,
-              //tristate: tristate,
+              tristate: tristate,
             )),
       ),
     );
-    if (onRowTap != null) {
-      contents = TableRowInkWell(
-        onTap: onRowTap,
-        overlayColor: MaterialStatePropertyAll(Colors.purple), //overlayColor,
-        child: contents,
-      );
-    }
+    // if (onRowTap != null) {
+    //   contents = TableRowInkWell(
+    //     onTap: onRowTap,
+    //     overlayColor: overlayColor,
+    //     child: contents,
+    //   );
+    // }
 
     return contents;
   }
