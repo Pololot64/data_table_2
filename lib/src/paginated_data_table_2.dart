@@ -169,7 +169,7 @@ class PaginatedDataTable2 extends StatefulWidget {
     this.sortArrowBuilder,
     this.sortArrowAlwaysVisible = false,
     this.onSelectAll,
-    required this.datarowCheckboxTheme,
+    this.datarowCheckboxTheme,
     this.dataRowHeight = kMinInteractiveDimension,
     this.headingRowHeight = 56.0,
     this.headingRowColor,
@@ -223,7 +223,7 @@ class PaginatedDataTable2 extends StatefulWidget {
 
   final bool wrapInCard;
 
-  final CheckboxThemeData datarowCheckboxTheme;
+  final CheckboxThemeData? datarowCheckboxTheme;
 
   /// The table card's optional header.
   ///

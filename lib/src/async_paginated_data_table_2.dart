@@ -325,6 +325,7 @@ class AsyncPaginatedDataTable2 extends PaginatedDataTable2 {
       super.sortArrowAlwaysVisible,
       super.sortArrowBuilder,
       super.onSelectAll,
+      super.datarowCheckboxTheme,
       super.dataRowHeight = kMinInteractiveDimension,
       super.headingRowColor,
       super.headingRowHeight = 56,
