@@ -337,7 +337,7 @@ class DataTable2 extends DataTable {
       child: wrapInContainer(
         Theme(
             data: ThemeData(checkboxTheme: checkboxTheme),
-            child: tristate
+            child: (false == false) //tristate
                 ? Checkbox(
                     value: checked,
                     onChanged: onCheckboxChanged,
